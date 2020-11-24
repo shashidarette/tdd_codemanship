@@ -15,4 +15,9 @@ public class FibonacciTests {
 	public void firstTwoNumbersAsIndex(int index, int expected) {
 		assertEquals(expected, new Fibonacci().getNumber(index));
 	}
+	
+	@Test
+	public void thirdNumberInSequenceIsOne( ) {
+		assertEquals(1, new Fibonacci().getNumber(2));
+	}
 }
