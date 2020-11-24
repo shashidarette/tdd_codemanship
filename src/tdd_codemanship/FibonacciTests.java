@@ -2,18 +2,27 @@ package tdd_codemanship;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
+import org.junit.runner.RunWith;
 
-class FibonacciTests {
+import junitparams.JUnitParamsRunner;
+import junitparams.Parameters;
 
+@RunWith(JUnitParamsRunner.class)
+public class FibonacciTests {
 	@Test
-	void firstNumberInSequenceIsZero() {
+	@Parameters({"0,0", "1,1"})
+	public void firstTwoNumbersAsIndex(int index, int expected) {
+		assertEquals(expected, new Fibonacci().getNumber(index));
+	}
+	
+	@Test
+	public void firstNumberInSequenceIsZero() {
 		assertEquals(0, new Fibonacci().getNumber(0));
 	}
 	
 	@Test
-	void secondNumberInSequenceIsOne() {
+	public void secondNumberInSequenceIsOne() {
 		assertEquals(1, new Fibonacci().getNumber(1));
 	}
-
 }
