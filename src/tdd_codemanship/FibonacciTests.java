@@ -13,11 +13,15 @@ public class FibonacciTests {
 	@Test
 	@Parameters({"0,0", "1,1"})
 	public void firstTwoNumbersAsIndex(int index, int expected) {
-		assertEquals(expected, new Fibonacci().getNumber(index));
+		assertEquals(expected, getFibonacciNumber(index));
 	}
 	
 	@Test
 	public void thirdNumberInSequenceIsOne( ) {
-		assertEquals(1, new Fibonacci().getNumber(2));
+		assertEquals(1, getFibonacciNumber(2));
+	}
+	
+	private Object getFibonacciNumber(int index) {
+		return new Fibonacci().getNumber(index);
 	}
 }
