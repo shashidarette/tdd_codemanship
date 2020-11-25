@@ -22,16 +22,11 @@ public class FibonacciTests {
 		assertEquals(expected, getFibonacciNumber(index));
 	}
 	
-//	@Test
-//	public void sixthNumberIsFive() {
-//		assertEquals(5, getFibonacciNumber(5));
-//	}
-//	
-//	@Test
-//	public void seventhNumberIsEight() {
-//		assertEquals(8, getFibonacciNumber(6));
-//	}
-		
+	@Test(expected=IllegalArgumentException.class)
+	public void negativeTest() {
+		getFibonacciNumber(-1);
+	}
+	
 	private Object getFibonacciNumber(int index) {
 		return new Fibonacci().getNumber(index);
 	}
