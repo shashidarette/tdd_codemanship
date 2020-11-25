@@ -17,10 +17,20 @@ public class FibonacciTests {
 	}
 	
 	@Test
-	@Parameters({"2,1", "3,2"})
-	public void thirdNumberOnIndexMinusOne(int index, int expected) {
+	@Parameters({"2,1", "3,2", "5, 5", "6, 8", "7, 13", "8, 21", "9, 34"})
+	public void thirdNumberOnIsSumOfPreviousTwo(int index, int expected) {
 		assertEquals(expected, getFibonacciNumber(index));
 	}
+	
+//	@Test
+//	public void sixthNumberIsFive() {
+//		assertEquals(5, getFibonacciNumber(5));
+//	}
+//	
+//	@Test
+//	public void seventhNumberIsEight() {
+//		assertEquals(8, getFibonacciNumber(6));
+//	}
 		
 	private Object getFibonacciNumber(int index) {
 		return new Fibonacci().getNumber(index);
