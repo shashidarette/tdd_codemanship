@@ -21,6 +21,11 @@ public class FibonacciTests {
 		assertEquals(1, getFibonacciNumber(2));
 	}
 	
+	@Test
+	public void fourthNumberInSequenceIsTwo() {
+		assertEquals(2, getFibonacciNumber(3));
+	}
+	
 	private Object getFibonacciNumber(int index) {
 		return new Fibonacci().getNumber(index);
 	}

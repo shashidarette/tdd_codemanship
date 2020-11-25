@@ -7,7 +7,7 @@ public class Fibonacci {
 			return index;
 		}
 		
-		return 1;
+		return index - 1;
 	}
 
 }
