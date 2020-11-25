@@ -11,27 +11,17 @@ import junitparams.Parameters;
 @RunWith(JUnitParamsRunner.class)
 public class FibonacciTests {
 	@Test
-	@Parameters({"0,0", "1,1", "2,1", "3,2"})
+	@Parameters({"0,0", "1,1"})
 	public void firstFourNumbersAsIndex(int index, int expected) {
 		assertEquals(expected, getFibonacciNumber(index));
 	}
 	
-//	@Test
-//	@Parameters({})
-//	public void firstTwoNumbersAsIndex(int index, int expected) {
-//		assertEquals(expected, getFibonacciNumber(index));
-//	}
-//	
-//	@Test
-//	public void thirdNumberInSequenceIsOne( ) {
-//		assertEquals(1, getFibonacciNumber(2));
-//	}
-//	
-//	@Test
-//	public void fourthNumberInSequenceIsTwo() {
-//		assertEquals(2, getFibonacciNumber(3));
-//	}
-	
+	@Test
+	@Parameters({"2,1", "3,2"})
+	public void thirdNumberOnIndexMinusOne(int index, int expected) {
+		assertEquals(expected, getFibonacciNumber(index));
+	}
+		
 	private Object getFibonacciNumber(int index) {
 		return new Fibonacci().getNumber(index);
 	}
