@@ -7,11 +7,17 @@ public class Fibonacci {
 			throw new IllegalArgumentException();
 		}
 		
-		if (index < 2) {
-			return index;
+		int[] sequence = new int[index+1];
+		
+		for (int i = 0; i < sequence.length; i++ ) {
+			if (i < 2) {
+				sequence[i] = i;
+			} else {
+				sequence[i] = sequence[i-1] + sequence[i-2];
+			}
 		}
 		
-		return getNumber(index - 1) + getNumber(index - 2);
+		return sequence[index];
 	}
 
 }
